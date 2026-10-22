@@ -1,6 +1,9 @@
+import time
+
+
 def maxHeapify(arr,i,length): ## O(log n)
-    left = (i*2)+2
-    right = (i*2)+1
+    left = (i*2)+1
+    right = (i*2)+2
     largest = i
     if(left <= length and arr[left] > arr[largest]):
         largest = left
@@ -24,3 +27,20 @@ def heapSort(arr):
         heapSize -= 1
         maxHeapify(arr,0,heapSize-1)
     return arr    
+
+
+def run_heap_sort(test_arrays):
+    sizes = []
+    times = []
+
+    for size, arr in test_arrays:
+        arr_copy = arr.copy()
+
+        start = time.perf_counter()
+        heapSort(arr_copy)
+        end = time.perf_counter()
+
+        sizes.append(size)
+        times.append((end - start) * 1000)
+
+    return sizes, times
