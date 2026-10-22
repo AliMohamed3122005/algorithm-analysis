@@ -19,9 +19,9 @@ def run_insertion_sort(test_arrays):
     random.seed(42)  # Fixed seed
     for size, original_arr in test_arrays:
         arr = original_arr.copy()
-        start = time.time()
+        start = time.perf_counter()
         insertionSort(arr)
-        end = time.time()
+        end = time.perf_counter()
         time_.append((end-start)*1000)
         sizes.append(size)
         print(f"Insertion Sort -> Size : {size} , Execution Time : {(end-start)*1000:.2f} ms")

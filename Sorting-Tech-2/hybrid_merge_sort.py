@@ -44,9 +44,9 @@ def run_hybrid_merge_sort(test_arrays,threshold):
     time_=[]
     for size, original_arr in test_arrays:
         arr = original_arr.copy()
-        start = time.time()
+        start = time.perf_counter()
         mergeSort(arr)
-        end = time.time()
+        end = time.perf_counter()
         time_.append((end-start)*1000)
         sizes.append(size)
         print(f"Hybrid Merge Sort -> n: {size} , time of execution {time_[-1]:.2f}  ms")

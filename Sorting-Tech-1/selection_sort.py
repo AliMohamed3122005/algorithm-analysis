@@ -20,9 +20,9 @@ def run_selection_sort(test_arrays):
     
     for size, original_arr in test_arrays:
         arr = original_arr.copy()
-        start = time.time()
+        start = time.perf_counter()
         selection_sort(arr)
-        end = time.time()
+        end = time.perf_counter()
         time_.append((end-start)*1000)
         sizes.append(size)
         print(f"Selection Sort -> n: {size} , time of execution {time_[-1]:.2f}  ms")

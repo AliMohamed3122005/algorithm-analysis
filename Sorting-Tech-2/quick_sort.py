@@ -34,9 +34,9 @@ def run_quick_sort(test_arrays):
     for size, original_arr in test_arrays:
         arr = original_arr.copy()
 
-        start = time.time()
+        start = time.perf_counter()
         random_quick_sort(arr, 0, len(arr) - 1)
-        end = time.time()
+        end = time.perf_counter()
 
         time_.append((end - start) * 1000)
         sizes.append(size)
